@@ -1,27 +1,24 @@
 import React from "react";
-// import Employees rom "./Employees"
 
-function Search(props) {
-  return (
-    <form>
-      <div className="form-group">
-        <label htmlFor="search">Search:</label>
+function Search(props){
+    return (
+        <div className="search-bar">
+        <p><strong>Search by name:</strong></p>
+        <form className="form">
         <input
-          onChange={props.handleInputChange}
-          value={props.value}
-          name="search"
-          type="text"
-          className="form-control"
-          placeholder="Search Employees"
-          id="search"
+            value={props.value}
+            name="search"
+            onChange={props.onChange}
+            type="text"
+            placeholder="Search"
         />
-        <br />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary">
-          Search
-        </button>
-      </div>
-    </form>
-  );
+         &nbsp;
+         <button onClick={props.onClick}>Submit</button>
+         &nbsp;
+         <button onClick={props.reset}>Reset</button>
+        </form>
+        </div>
+    );
 }
 
 export default Search;
